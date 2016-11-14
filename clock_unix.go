@@ -9,13 +9,13 @@ import (
 )
 
 const (
-	CLOCK_MONOTONIC = 1
+	clock_monotonic = 1
 )
 
 func monotime() int64 {
 	var ts syscall.Timespec
 
-	syscall.Syscall(syscall.SYS_CLOCK_GETTIME, CLOCK_MONOTONIC, uintptr(unsafe.Pointer(&ts)), 0)
+	syscall.Syscall(syscall.SYS_CLOCK_GETTIME, clock_monotonic, uintptr(unsafe.Pointer(&ts)), 0)
 
 	return ts.Nano()
 }
