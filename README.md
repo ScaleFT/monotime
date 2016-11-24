@@ -3,7 +3,7 @@
 [![GoDoc](https://godoc.org/github.com/ScaleFT/monotime?status.svg)](https://godoc.org/github.com/ScaleFT/monotime)
 [![Build Status](https://travis-ci.org/ScaleFT/monotime.svg?branch=master)](https://travis-ci.org/ScaleFT/monotime)
 
-`monotime` provides a portable monotonic timer.
+`monotime` provides a portable monotonic timer for Go / Golang.
 
 - Linux: Uses `runtime.nanotime`
 - Windows: Uses `QueryPerformanceCounter` [docs](https://msdn.microsoft.com/en-us/library/windows/desktop/ms644904(v=vs.85).aspx)
