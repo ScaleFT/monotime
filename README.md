@@ -21,4 +21,8 @@ including macOS and Windows, `runtime.nanotime` doesn't actually implement a mon
 When possible this library uses `runtime.nanotime`, but on platforms where it is not available
 `monotime` may use other methods.
 
-See [Go issue #12914](https://github.com/golang/go/issues/12914) for more information.
+See the following `golang/go` issues for more background:
+
+- [#12914: runtime: time: expose monotonic clock source](https://github.com/golang/go/issues/12914)
+- [#17610: runtime: use mach_absolute_time for runtime.nanotime](https://github.com/golang/go/issues/17610)
+- [#6007: time: use monotonic time on netbsd](https://github.com/golang/go/issues/6007)
