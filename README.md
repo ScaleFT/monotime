@@ -1,6 +1,7 @@
 # monotime
 
 [![GoDoc](https://godoc.org/github.com/ScaleFT/monotime?status.svg)](https://godoc.org/github.com/ScaleFT/monotime)
+[![Build Status](https://travis-ci.org/ScaleFT/monotime.svg?branch=master)](https://travis-ci.org/ScaleFT/monotime)
 
 `monotime` provides a portable monotonic timer.
 
