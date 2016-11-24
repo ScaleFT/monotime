@@ -1,9 +1,12 @@
+// +build windows
+
 package monotime
 
 import (
-	"golang.org/x/sys/windows"
 	"time"
 	"unsafe"
+
+	"golang.org/x/sys/windows"
 )
 
 var (

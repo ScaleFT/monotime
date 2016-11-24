@@ -1,4 +1,4 @@
-// +build ignore
+// +build netbsd freebsd solaris
 
 package monotime
 
