@@ -1,4 +1,4 @@
-// +build windows linux darwin
+// +build linux
 
 // Copyright (C) 2016  Arista Networks, Inc.
 // Use of this source code is governed by the Apache License 2.0
