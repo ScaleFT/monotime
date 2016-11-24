@@ -5,7 +5,7 @@
 `monotime` provides a portable monotonic timer.
 
 - Linux: Uses `runtime.nanotime`
-- Windows: Uses `runtime.nanotime`
+- Windows: Uses `QueryPerformanceCounter` [docs](https://msdn.microsoft.com/en-us/library/windows/desktop/ms644904(v=vs.85).aspx)
 - macOS: Uses `mach_absolute_time` [docs](https://developer.apple.com/library/content/qa/qa1398/_index.html) (requires CGO)
 
 ## About `runtime.nanotime`
