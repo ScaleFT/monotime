@@ -1,4 +1,4 @@
-// +build darwin
+// +build ignore
 
 package monotime
 
@@ -16,24 +16,11 @@ func init() {
 }
 
 func monotime() uint64 {
-	t := C.mach_absolute_time()
-
-	return uint64(t)
+	return uint64(C.mach_absolute_time())
 }
 
-type timer struct {
-	start uint64
-}
-
-func newTimer() *timer {
-	return &timer{
-		start: monotime(),
-	}
-}
-
-func (t *timer) Elapsed() time.Duration {
-	now := monotime()
-	elapsed := now - t.start
+func duration(start uint64, end uint64) time.Duration {
+	elapsed := end - start
 	elapsedNano := elapsed * uint64(tbinfo.numer) / uint64(tbinfo.denom)
 	return time.Duration(elapsedNano)
 }

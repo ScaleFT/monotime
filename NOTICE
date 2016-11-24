@@ -3,3 +3,8 @@ Copyright 2016 ScaleFT, Inc
 
 This product includes software developed at ScaleFT, Inc.
 (https://www.scaleft.com/).
+
+clock_runtime_nanotime.go is based on goarista
+(https://github.com/aristanetworks/goarista).
+
+Copyright (C) 2016  Arista Networks, Inc.

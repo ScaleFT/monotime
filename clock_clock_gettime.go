@@ -1,4 +1,4 @@
-// +build !darwin,!windows
+// +build ignore
 
 package monotime
 
@@ -20,17 +20,6 @@ func monotime() int64 {
 	return ts.Nano()
 }
 
-type timer struct {
-	start int64
-}
-
-func newTimer() *timer {
-	return &timer{
-		start: monotime(),
-	}
-}
-
-func (t *timer) Elapsed() time.Duration {
-	now := monotime()
-	return time.Duration(now - t.start)
+func duration(start uint64, end uint64) time.Duration {
+	return time.Duration(end - start)
 }
