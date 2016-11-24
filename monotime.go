@@ -15,16 +15,16 @@ func New() Timer {
 	return newTimer()
 }
 
-// Now returns the current time from a monotonic clock, it should be
+// Now returns the current time from a monotonic clock, it must be
 // treated as an opaque, platform specific value.
 //
 // For most purposes, you should subtract two of these values
-// and using the Duration() method.
+// by using the Duration() method.
 func Now() uint64 {
 	return monotime()
 }
 
-// Duration returns
+// Duration returns a time.Duration from two previously captured Now() calls.
 func Duration(start uint64, end uint64) time.Duration {
 	return duration(start, end)
 }
