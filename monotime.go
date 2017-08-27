@@ -20,25 +20,11 @@ func New() Timer {
 //
 // For most purposes, you should subtract two of these values
 // by using the Duration() method.
-func Now() uint64 {
+func Now() Monotime {
 	return monotime()
 }
 
 // Duration returns a time.Duration from two previously captured Now() calls.
-func Duration(start uint64, end uint64) time.Duration {
+func Duration(start Monotime, end Monotime) time.Duration {
 	return duration(start, end)
-}
-
-type timer struct {
-	start uint64
-}
-
-func newTimer() *timer {
-	return &timer{
-		start: monotime(),
-	}
-}
-
-func (t *timer) Elapsed() time.Duration {
-	return duration(t.start, monotime())
 }

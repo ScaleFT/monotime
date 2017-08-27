@@ -1,4 +1,5 @@
 // +build linux
+// +build !go1.9
 
 // Copyright (C) 2016  Arista Networks, Inc.
 // Use of this source code is governed by the Apache License 2.0
@@ -22,10 +23,10 @@ func nanotime() int64
 // constant rate, unlike time.Now() from the Go standard library, which may
 // slow down, speed up, jump forward or backward, due to NTP activity or leap
 // seconds.
-func monotime() uint64 {
-	return uint64(nanotime())
+func monotime() Monotime {
+	return Monotime(nanotime())
 }
 
-func duration(start uint64, end uint64) time.Duration {
-	return time.Duration(end - start)
+func duration(start Monotime, end Monotime) time.Duration {
+	return time.Duration(uint64(end) - uint64(start))
 }

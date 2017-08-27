@@ -1,4 +1,5 @@
 // +build windows
+// +build !go1.9
 
 package monotime
 
@@ -30,7 +31,7 @@ func init() {
 	counterFreq = float64(freq) / 1e9
 }
 
-func monotime() uint64 {
+func monotime() Monotime {
 	var t uint64
 
 	ret, _, err := procQueryPerformanceCounter.Call(uintptr(unsafe.Pointer(&t)))
@@ -41,6 +42,6 @@ func monotime() uint64 {
 	return t
 }
 
-func duration(start uint64, end uint64) time.Duration {
+func duration(start Monotime, end Monotime) time.Duration {
 	return time.Duration(float64((end - start)) / counterFreq)
 }

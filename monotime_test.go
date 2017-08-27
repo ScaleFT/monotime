@@ -14,8 +14,6 @@ func TestNow(t *testing.T) {
 	require.NotEmpty(t, end)
 	require.NotEmpty(t, start, end)
 
-	require.True(t, start < end)
-
 	d := Duration(start, end)
 	require.NotEmpty(t, d)
 }
